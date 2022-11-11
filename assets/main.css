@@ -256,3 +256,138 @@ body{
         transform: scale(0.2);
     }
 }
+.hidden{
+    display: none;
+}
+.visible{
+    display: grid;
+}
+.modal{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    z-index: 8;
+    /* display: grid; */
+    place-items: center;
+}
+.modal__content{
+    background-color: white;
+    width: 50%;
+    height: 60%;
+    display: grid;
+    padding: 20px;
+}
+.modal__content--close{
+    cursor: pointer;
+}
+.modal__content--slider{
+    width: 500px;
+    height: 400px;
+    justify-self: center;
+    transform-style: preserve-3d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 38px;
+
+}
+.cards{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.card{
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    transition: transform 0.5s ease;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    background-color: var(--yellow);
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+.card img{
+    width: 160px;
+}
+#radio-1,
+#radio-2,
+#radio-3{
+    display: none;
+}
+#radio-1:checked ~ .cards #card-1,
+#radio-2:checked ~ .cards #card-2,
+#radio-3:checked ~ .cards #card-3{
+    transform: translateX(0) scale(1);
+    opacity: 1;
+    z-index: 1;
+}
+#radio-1:checked ~ .cards #card-2,
+#radio-2:checked ~ .cards #card-3,
+#radio-3:checked ~ .cards #card-1{
+    transform: translateX(40%) scale(0.8);
+    opacity: 0.5;
+    z-index: 0;
+}
+#radio-1:checked ~ .cards #card-3,
+#radio-2:checked ~ .cards #card-1,
+#radio-3:checked ~ .cards #card-2{
+    transform: translateX(-40%) scale(0.8);
+    opacity: 0.5;
+    z-index: 0;
+} 
+
+.modal__content--p{
+    animation: shake 0.5s infinite ease-in-out alternate;
+}
+@keyframes shake{
+    0%{
+        transform: rotate(4deg);
+    }
+    100%{
+        transform: rotate(-4deg);
+    }
+}
+
+.btnCard{
+    width: 190px;
+    height: 70px;
+    border: none;
+    background-color: var(--red);
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    font-weight: bold;
+    font-family: var(--lato);
+    cursor: pointer;
+    border-radius: 5px;
+    /* box-shadow: inset 0 0 0 0 var(--blue); */
+    /* border: 3px solid var(--red); */
+    transition: ease-in-out 0.3s;
+    outline: none;
+    position: relative;
+    z-index: 1;
+
+}
+.btnCard::before{
+    transition: 0.5s all ease;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    opacity: 0;
+    content: "";
+    background-color: var(--blue);
+}
+.btnCard:hover:before{
+    transition: 0.5s all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;
+    z-index: -1;
+    border-radius: 5px;
+}

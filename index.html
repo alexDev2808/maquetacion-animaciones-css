@@ -38,13 +38,13 @@
             </section>
 
             <section class="footer">
-                <div>
+                <div class="btn-superhero">
                     <img src="https://i.ibb.co/tKWqw8J/spiderman.png" alt="Lego spiderman">
                 </div>
-                <div>
+                <div class="btn-superhero"> 
                     <img src="https://i.ibb.co/Xzsdvgg/robin.png" alt="Lego robin">
                 </div>
-                <div>
+                <div class="btn-superhero">
                     <img src="https://i.ibb.co/M18p91c/batman.webp" alt="Lego batman">
                 </div>
             </section>
@@ -56,7 +56,38 @@
             <div></div>
         </section>
         <!-- Modal -->
-        <section class="modal"></section>
+        <section class="modal hidden">
+            <div class="modal__content">
+                <img class="modal__content--close" src="./assets/icons8-macos-close-32.png" alt="">
+
+                <div class="modal__content--slider">
+
+                    <p class="modal__content--p">Da click en la imagen</p>
+
+                    <input type="radio" name="slider-1" id="radio-1">
+                    <input type="radio" name="slider-1" id="radio-2">
+                    <input type="radio" name="slider-1" id="radio-3">
+
+                    <div class="cards">
+                        <label for="radio-1" id="card-1" class="card">
+                            <img src="https://static.platzi.com/media/public/uploads/spider-man_db8af43d-b692-4986-a385-e645d286e142.png" alt="">
+                        </label>
+                        <label for="radio-2" id="card-2" class="card">
+                            <img src="https://static.platzi.com/media/public/uploads/spider-man-2_b24c96b3-6d59-496f-815d-32b25eba0141.png" alt="">
+                        </label>
+                        <label for="radio-3" id="card-3" class="card">
+                            <img src="https://static.platzi.com/media/public/uploads/spider-man-3_19f5c510-8059-4477-abf8-42249a5445b7.png" alt="">
+                        </label>
+                    </div>
+
+                    <button class="btnCard">Lo quiero!</button>
+                </div>
+
+            </div>
+        </section>
     </div>
+
+
+    <script src="./assets/main.js"></script>
 </body>
 </html>
